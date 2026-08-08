@@ -11,6 +11,14 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/login")
 public class AuthServlet extends HttpServlet {
 
+    // Maneja la petición al escribir la URL directamente en el navegador
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+    }
+
+    // Maneja el envío del formulario de inicio de sesión
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -12,9 +12,9 @@ import jakarta.servlet.http.Part;
 
 @WebServlet("/upload")
 @MultipartConfig(
-    fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-    maxFileSize = 1024 * 1024 * 10,      // 10MB
-    maxRequestSize = 1024 * 1024 * 50    // 50MB
+    fileSizeThreshold = 1024 * 1024 * 2,
+    maxFileSize = 1024 * 1024 * 10,
+    maxRequestSize = 1024 * 1024 * 50
 )
 public class DocumentUploadServlet extends HttpServlet {
 
@@ -31,7 +31,6 @@ public class DocumentUploadServlet extends HttpServlet {
             } else if (!DocumentValidator.isValidExtension(fileName)) {
                 request.setAttribute("uploadMessage", "Error: Formato de archivo no permitido. Solo se aceptan PDF, PNG, JPG y JPEG.");
             } else {
-                // Registro simulado de archivo subido exitosamente
                 request.setAttribute("uploadMessage", "Documento '" + fileName + "' subido y validado exitosamente.");
             }
         } catch (Exception e) {

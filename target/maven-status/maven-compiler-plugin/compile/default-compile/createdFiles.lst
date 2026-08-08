@@ -1,3 +1,5 @@
+com\docuflow\servlet\AuthServlet.class
 com\docuflow\resources\JakartaEE11Resource.class
 com\docuflow\util\DocumentValidator.class
+com\docuflow\servlet\DocumentUploadServlet.class
 com\docuflow\JakartaRestConfiguration.class
