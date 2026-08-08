@@ -4,4 +4,5 @@ com\docuflow\resources\JakartaEE11Resource.class
 com\docuflow\util\DocumentValidator.class
 com\docuflow\servlet\DocumentUploadServlet.class
 com\docuflow\JakartaRestConfiguration.class
+com\docuflow\filter\AuthFilter.class
 com\docuflow\servlet\LogoutServlet.class
