@@ -79,7 +79,7 @@
                                     <td><%= doc.get("name") %></td>
                                     <td><span class="badge bg-info text-dark"><%= doc.get("user") %></span></td>
                                     <td>
-                                        <a href="#" onclick="alert('Descargando <%= doc.get("name") %>...')" class="btn btn-sm btn-outline-primary">Descargar</a>
+                                        <a href="upload?action=download&id=<%= doc.get("id") %>" class="btn btn-sm btn-outline-primary">Descargar</a>
                                         <a href="upload?action=delete&id=<%= doc.get("id") %>" class="btn btn-sm btn-outline-danger" onclick="return confirm('¿Eliminar este documento?')">Eliminar</a>
                                     </td>
                                 </tr>
