@@ -19,14 +19,19 @@ public class DatabaseConfig {
     }
 
     public static void initDatabase() {
-        // Reiniciamos la tabla para aplicar la nueva estructura con BLOB y tipo de archivo
-        String dropSql = "DROP TABLE IF EXISTS documents;";
-        String createSql = "CREATE TABLE documents ("
+        String dropSql = "DROP TABLE IF EXISTS requests;";
+        String createSql = "CREATE TABLE requests ("
                 + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "name TEXT NOT NULL, "
+                + "concepto TEXT NOT NULL, "
+                + "monto REAL NOT NULL, "
+                + "fecha TEXT NOT NULL, "
+                + "observaciones TEXT, "
+                + "file_name TEXT, "
+                + "file_type TEXT, "
+                + "file_data BLOB, "
                 + "uploaded_by TEXT NOT NULL, "
-                + "file_type TEXT NOT NULL, "
-                + "file_data BLOB NOT NULL"
+                + "status TEXT DEFAULT 'PENDIENTE', "
+                + "feedback TEXT"
                 + ");";
         try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
             stmt.execute(dropSql);
