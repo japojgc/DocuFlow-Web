@@ -30,12 +30,12 @@ public class AuthServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", username);
             session.setAttribute("role", "ADMIN");
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("upload");
         } else if ("user".equals(username) && "user123".equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute("user", username);
             session.setAttribute("role", "EMPLOYEE");
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("upload");
         } else {
             request.setAttribute("errorMessage", "Usuario o contraseña incorrectos");
             request.getRequestDispatcher("login.jsp").forward(request, response);
